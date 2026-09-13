@@ -104,6 +104,9 @@
     };
   </script>
 
+  <!-- Luxury Momentum Smooth Scroll Engine (Lenis) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <!-- Luxury Scroll Animation & HUD Stylesheet -->
   <link rel="stylesheet" href="styles.css"/>
 </head>
@@ -127,6 +130,15 @@
       <div class="progress-meta">
         <span id="progressText">0%</span>
         <span class="progress-status">LOADING 237 CINEMATIC FRAMES</span>
+      </div>
+
+      <!-- Enter Experience Button with Sound Indicator -->
+      <div id="preloaderEntry" class="preloader-entry-action opacity-0 pointer-events-none transition-all duration-500 mt-6 flex flex-col items-center gap-2">
+        <button id="enterExperienceBtn" class="px-7 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-widest uppercase hover:bg-[#ffb3af] hover:text-[#68000d] transition-all flex items-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.25)] hover:scale-105 active:scale-95 cursor-pointer">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          Enter Immersive Experience
+        </button>
+        <span class="text-[11px] text-neutral-400 font-label-caps uppercase tracking-widest">Mercedes Acoustic Soundstage &middot; 4K Ultra HD</span>
       </div>
     </div>
   </div>
@@ -159,8 +171,18 @@
         <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-white transition-colors py-2" href="#consultation">Bespoke Salon</a>
       </nav>
 
-      <!-- Header Action Button -->
+      <!-- Header Action Buttons -->
       <div class="flex items-center gap-3">
+        <!-- Mercedes Sound Experience Toggle -->
+        <button id="soundToggleBtn" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/5 hover:bg-white/10 text-white/90 hover:text-white transition-all text-xs font-label-caps uppercase tracking-wider cursor-pointer" title="Toggle Mercedes Sound">
+          <span id="soundWave" class="sound-wave flex items-center gap-0.5 h-3">
+            <span class="sound-bar h-1 w-0.5 bg-[#ffb3af] rounded-full transition-all"></span>
+            <span class="sound-bar h-2.5 w-0.5 bg-[#ffb3af] rounded-full transition-all"></span>
+            <span class="sound-bar h-1.5 w-0.5 bg-[#ffb3af] rounded-full transition-all"></span>
+          </span>
+          <span id="soundStatusText" class="text-[11px] font-semibold tracking-wider">SOUND ON</span>
+        </button>
+
         <a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs font-label-caps text-label-caps uppercase text-black bg-white hover:bg-[#ffb3af] hover:text-[#68000d] border border-white transition-all duration-300 font-semibold shadow-md rounded-sm" href="#consultation">
           Configure &amp; Inquire
         </a>
@@ -737,7 +759,7 @@
           <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">AMG S 63 E PERFORMANCE</li>
         </ul>
       </div>
-      <div class="md:col-span-2 space-y-space-sm">
+      <div class="md:col-span-3 space-y-space-sm">
         <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block">Clientele Atelier</span>
         <ul class="space-y-space-xs">
           <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Bespoke Manufaktur</li>
@@ -746,19 +768,43 @@
           <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Pan-India Delivery Protocol</li>
         </ul>
       </div>
-      <div class="md:col-span-3 space-y-space-sm">
-        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block">The Heritage Dossier</span>
-        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Engineered without compromise since 1951. Each S-Class vehicle is an irrevocable commitment to sensory serenity, vanguard aerodynamics, and handcrafted sovereignty.</p>
+      <!-- Right Side: Heritage Archive (Smaller & Compact) -->
+      <div class="md:col-span-2 space-y-2 border-l border-white/[0.06] pl-4">
+        <span class="font-label-caps text-[11px] text-neutral-400 uppercase tracking-widest block font-medium">Heritage Archive</span>
+        <p class="text-[11px] text-neutral-500 leading-relaxed">Engineered without compromise since 1951. An enduring commitment to sensory serenity, vanguard aerodynamics, and handcrafted sovereignty.</p>
+        <span class="text-[10px] text-neutral-600 font-label-caps uppercase tracking-wider block">Sindelfingen, Germany</span>
       </div>
     </div>
     
-    <div class="w-full px-margin pt-space-md border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-space-sm">
-      <span class="font-label-caps text-label-caps text-on-surface-variant">&copy; 2026 Mercedes-Benz India Pvt. Ltd. All rights reserved.</span>
-      <div class="flex items-center gap-space-md font-label-caps text-label-caps text-on-surface-variant">
-        <span class="hover:text-on-surface transition-colors cursor-pointer">Legal Notices</span>
-        <span class="hover:text-on-surface transition-colors cursor-pointer">Privacy Statement</span>
-        <span class="hover:text-on-surface transition-colors cursor-pointer">Emission Standards</span>
-        <span class="hover:text-on-surface transition-colors cursor-pointer">Mumbai Flagship</span>
+    <!-- Legal & Policy Row -->
+    <div class="w-full px-margin pt-space-md border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-space-sm text-xs">
+      <span class="font-label-caps text-label-caps text-neutral-400">&copy; 2026 Mercedes-Benz Showcase Concept.</span>
+      <div class="flex items-center gap-space-md font-label-caps text-label-caps text-neutral-400 text-xs">
+        <span class="hover:text-white transition-colors cursor-pointer">Concept Legal</span>
+        <span class="hover:text-white transition-colors cursor-pointer">Privacy Protocol</span>
+        <span class="hover:text-white transition-colors cursor-pointer">Mumbai Atelier</span>
+      </div>
+    </div>
+
+    <!-- Prominent Concept Disclaimer Card -->
+    <div class="w-full px-margin mt-6">
+      <div class="w-full p-4 rounded-lg bg-[#141418] border border-amber-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 shadow-lg">
+        <div class="flex items-start gap-3">
+          <span class="text-amber-400 text-xl leading-none mt-0.5">⚠️</span>
+          <div class="space-y-0.5">
+            <h4 class="font-label-caps text-xs uppercase tracking-wider text-amber-300 font-semibold">
+              Unofficial Concept Project &middot; Educational Sample
+            </h4>
+            <p class="text-[12px] text-neutral-400 leading-relaxed max-w-3xl">
+              <strong>⚠️ Unofficial concept project &mdash; not affiliated with Mercedes-Benz AG.</strong> This is an independent sample and educational portfolio project, NOT an official Mercedes-Benz website. All vehicle designs, brand names, and trademarks belong exclusively to Mercedes-Benz AG and their respective owners.
+            </p>
+          </div>
+        </div>
+        <div class="shrink-0">
+          <span class="inline-flex items-center px-3 py-1 rounded text-[10px] font-label-caps uppercase tracking-widest bg-amber-500/10 text-amber-300 border border-amber-500/20">
+            Sample Project Only
+          </span>
+        </div>
       </div>
     </div>
 
