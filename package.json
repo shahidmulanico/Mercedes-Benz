@@ -1,0 +1,23 @@
+{
+  "name": "mercedes-benz-s-class-flagship",
+  "version": "1.0.0",
+  "description": "Mercedes-Benz S-Class 4K Ultra HD Cinematic Experience",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "mercedes-benz",
+    "s-class",
+    "4k",
+    "canvas-animation",
+    "cinematic",
+    "luxury"
+  ],
+  "author": "Shahid Mulani",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-git": "^1.42.2"
+  }
+}

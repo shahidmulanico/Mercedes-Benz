@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mercedes-Benz S-Class Flagship | Sovereign Series</title>
+
+  <!-- Google Fonts & Material Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      "darkMode": "class",
+      "theme": {
+        "extend": {
+          "colors": {
+            "tertiary-container": "#7e363d",
+            "inverse-on-surface": "#313032",
+            "surface-container-high": "#2a2a2c",
+            "secondary-fixed-dim": "#c3c7ca",
+            "on-secondary-fixed-variant": "#43474a",
+            "secondary-container": "#454a4c",
+            "surface": "#131315",
+            "error-container": "#93000a",
+            "surface-variant": "#353437",
+            "on-secondary-container": "#b5b9bc",
+            "surface-tint": "#ffb3af",
+            "surface-container-low": "#1c1b1d",
+            "tertiary-fixed-dim": "#ffb3b6",
+            "on-surface-variant": "#e2bebc",
+            "on-secondary": "#2c3134",
+            "surface-container-highest": "#353437",
+            "background": "#131315",
+            "tertiary": "#ffb3b6",
+            "primary": "#ffb3af",
+            "on-primary-fixed": "#410005",
+            "outline-variant": "#5a403f",
+            "on-tertiary-fixed": "#3d040e",
+            "tertiary-fixed": "#ffdada",
+            "surface-bright": "#39393b",
+            "on-background": "#e5e1e4",
+            "primary-container": "#9b111e",
+            "on-secondary-fixed": "#171c1f",
+            "on-error": "#690005",
+            "inverse-surface": "#e5e1e4",
+            "error": "#ffb4ab",
+            "primary-fixed": "#ffdad7",
+            "on-primary-fixed-variant": "#910618",
+            "on-primary": "#68000d",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e5e1e4",
+            "on-tertiary-container": "#ffa6ab",
+            "secondary": "#c3c7ca",
+            "primary-fixed-dim": "#ffb3af",
+            "outline": "#a98987",
+            "inverse-primary": "#b4262d",
+            "surface-container-lowest": "#0e0e10",
+            "surface-dim": "#131315",
+            "on-tertiary-fixed-variant": "#763037",
+            "on-primary-container": "#ffa8a3",
+            "surface-container": "#201f22",
+            "on-tertiary": "#591a22",
+            "secondary-fixed": "#dfe3e6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "gutter": "2rem",
+            "space-md": "1.25rem",
+            "space-xs": "0.375rem",
+            "space-xl": "4.5rem",
+            "space-lg": "2.5rem",
+            "margin": "4rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "label-data": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "headline-xl-mobile": ["Playfair Display"],
+            "label-caps": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero": ["Playfair Display"],
+            "headline-xl": ["Playfair Display"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Luxury Scroll Animation & HUD Stylesheet -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="loading bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+
+  <!-- Cinematic Preloader (Loads all 237 frames) -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="mb-star-icon">
+        <svg viewBox="0 0 100 100" class="star-svg">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M50 8 L55 45 L92 50 L55 55 L50 92 L45 55 L8 50 L45 45 Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <h2 class="preloader-title">MERCEDES-BENZ</h2>
+      <p class="preloader-subtitle">SOVEREIGN SERIES &middot; S-CLASS W223</p>
+      
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <div class="progress-meta">
+        <span id="progressText">0%</span>
+        <span class="progress-status">LOADING 237 CINEMATIC FRAMES</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Floating Header Navigation -->
+  <header id="mainHeader" class="fixed top-0 w-full z-50 bg-[#0e0f12]/85 backdrop-blur-2xl border-b border-white/[0.08] transition-all duration-300">
+    <div class="h-20 w-full px-margin flex items-center justify-between">
+      <div class="flex items-center gap-space-md">
+        <a href="#hero" class="flex items-center gap-space-xs text-secondary-fixed no-underline">
+          <svg class="w-8 h-8 fill-current tracking-tighter" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" fill="none" r="45" stroke="currentColor" stroke-width="2"></circle>
+            <path d="M50 5 L50 50 L11 72 Z" fill="currentColor"></path>
+            <path d="M50 5 L50 50 L89 72 Z" fill="currentColor"></path>
+            <path d="M50 50 L11 72 L50 95 Z" fill="currentColor" opacity="0.5"></path>
+            <path d="M50 50 L89 72 L50 95 Z" fill="currentColor" opacity="0.5"></path>
+          </svg>
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-secondary-fixed">Mercedes-Benz</span>
+            <span class="font-label-caps text-label-caps tracking-[0.25em] text-on-surface-variant">S-Class Flagship</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-space-lg h-full">
+        <a class="font-label-caps text-label-caps uppercase text-white hover:text-primary transition-colors py-2" href="#hero">Overview</a>
+        <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-white transition-colors py-2" href="#innovation">Innovation</a>
+        <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-white transition-colors py-2" href="#craftsmanship">Craftsmanship</a>
+        <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-white transition-colors py-2" href="#specifications">Specifications</a>
+        <a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-white transition-colors py-2" href="#consultation">Bespoke Salon</a>
+      </nav>
+
+      <!-- Header Action Button -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs font-label-caps text-label-caps uppercase text-black bg-white hover:bg-[#ffb3af] hover:text-[#68000d] border border-white transition-all duration-300 font-semibold shadow-md rounded-sm" href="#consultation">
+          Configure &amp; Inquire
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full bg-surface">
+    <!-- ====================================================================
+         2. HERO CINEMA: Automatic Cinematic Reel on Entry
+         ==================================================================== -->
+    <section id="hero" class="hero-stage relative w-full h-screen min-h-[680px] overflow-hidden bg-[#080305]">
+      <div class="canvas-wrapper absolute inset-0 w-full h-full">
+        <canvas id="cinemaCanvas" class="w-full h-full block"></canvas>
+        <div class="canvas-vignette"></div>
+
+        <!-- Synchronized Cinematic Story Overlays -->
+        <div class="story-overlays-container">
+
+          <!-- Stage 1: Inception (Frames 001–040) -->
+          <article class="story-panel panel-1 active" data-range="0.00,0.22">
+            <div class="panel-content">
+              <div class="luxury-eyebrow">SOVEREIGN SERIES &middot; W223</div>
+              <h1 class="luxury-title">THE NEW S-CLASS</h1>
+              <p class="luxury-desc">The definition of automotive excellence. An extraordinary synthesis of sovereign presence, digital intuition, and handcrafted perfection.</p>
+              <div class="specs-pill-group">
+                <span class="spec-tag">4.0L V8 BITURBO</span>
+                <span class="spec-tag">496 HORSEPOWER</span>
+                <span class="spec-tag">EQ BOOST HYBRID</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stage 2: Aerodynamics (Frames 045–090) -->
+          <article class="story-panel panel-2" data-range="0.23,0.47">
+            <div class="panel-content glass-card">
+              <div class="luxury-eyebrow">AERODYNAMIC ARCHITECTURE</div>
+              <h2 class="luxury-title">0.22 C<sub>d</sub> STREAMLINED ELEGANCE</h2>
+              <p class="luxury-desc">Every surface is honed by the Sindelfingen wind tunnel to achieve an astonishing 0.22 drag coefficient. Seamless flush door handles and acoustic double-glazing turn highway velocity into absolute serenity.</p>
+              <div class="metric-row">
+                <div class="metric-box">
+                  <span class="metric-num">0.22</span>
+                  <span class="metric-unit">C<sub>d</sub> Drag Value</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-num">65%</span>
+                  <span class="metric-unit">Cabin Decibel Reduction</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-num">5,289</span>
+                  <span class="metric-unit">mm Stature Length</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stage 3: Digital Light Intelligence (Frames 095–150) -->
+          <article class="story-panel panel-3" data-range="0.48,0.71">
+            <div class="panel-content glass-card right-align">
+              <div class="luxury-eyebrow">PRECISION OPTICS</div>
+              <h2 class="luxury-title">DIGITAL LIGHT INTELLIGENCE</h2>
+              <p class="luxury-desc">Illuminating the future with 2.6 million micro-mirrors. Digital Light adapts in real-time, projecting warning symbols directly onto the asphalt and guiding through narrow construction zones with surgical precision.</p>
+              <div class="metric-row">
+                <div class="metric-box">
+                  <span class="metric-num">2.6M</span>
+                  <span class="metric-unit">Micro-Mirrors</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-num">650M</span>
+                  <span class="metric-unit">Ultra Range Beam</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-num">1000x</span>
+                  <span class="metric-unit">Faster Adaptive Reactivity</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stage 4: Executive Dynamics (Frames 155–195) -->
+          <article class="story-panel panel-4" data-range="0.72,0.89">
+            <div class="panel-content glass-card">
+              <div class="luxury-eyebrow">SOVEREIGN V8 PERFORMANCE</div>
+              <h2 class="luxury-title">EFFORTLESS COMMAND</h2>
+              <p class="luxury-desc">496 Horsepower delivered with velvet composure. AIRMATIC air suspension with continuously adaptive damping and 4.5-degree rear-axle steering balance limousine grace with sports agility.</p>
+              <div class="metric-row">
+                <div class="metric-box">
+                  <span class="metric-num">4.4s</span>
+                  <span class="metric-unit">0–60 MPH</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-num">516</span>
+                  <span class="metric-unit">LB-FT Torque</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-num">4MATIC</span>
+                  <span class="metric-unit">All-Wheel Drive</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Stage 5: Grand Finale (Frames 200–237) -->
+          <article class="story-panel panel-5" data-range="0.90,1.00">
+            <div class="panel-content center-align">
+              <div class="luxury-eyebrow">THE MASTERPIECE</div>
+              <h2 class="luxury-title finale-title">THE BEST OR NOTHING.</h2>
+              <p class="luxury-desc">The flagship of Mercedes-Benz stands ready for your arrival. Experience the vanguard of supreme comfort, safety, and bespoke prestige.</p>
+              <div class="action-btn-group">
+                <a href="#specifications" class="btn-primary">
+                  <span>EXPLORE SPECIFICATIONS</span>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#consultation" class="btn-secondary">
+                  <span>RESERVE PRIVATE SALON</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         USER'S WEBSITE SECTION 2: Architectural & Aerodynamic Study
+         ==================================================================== -->
+    <section class="relative w-full bg-surface-container-lowest py-space-xl px-margin overflow-hidden" id="innovation">
+      <div class="max-w-[1560px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+          <div class="space-y-space-xs max-w-2xl">
+            <span class="font-label-caps text-label-caps uppercase tracking-[0.25em] text-primary block">Anatomy of Sovereign Grace</span>
+            <h2 class="font-headline-xl text-headline-xl text-white">Architectural &amp; Aerodynamic Study</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Engineered within the wind tunnels of Sindelfingen. Every millimeter of the S-Class body synthesizes acoustic insulation, low turbulence flow, and sculptural majesty.
+            </p>
+          </div>
+          <div class="flex items-center gap-space-xs text-secondary-fixed font-label-caps text-label-caps uppercase tracking-widest">
+            <span class="material-symbols-outlined text-primary">motion_photos_auto</span>
+            <span>Aeroacoustic Wind Tunnel 0.22 cW</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <!-- Left: Dossier Image Presentation -->
+          <div class="lg:col-span-7 relative group">
+            <div class="relative rounded-2xl overflow-hidden bg-[#180306] shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
+              <img alt="Mercedes-Benz S-Class 4-Quadrant Study: Emblem, Aerodynamic Profile, Carmine Coachwork, and Front Facia" class="w-full h-auto object-cover transform scale-100 group-hover:scale-[1.015] transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7Gyaqh8K2m8OuUYEzMn-D5q-Xykfwi7j_yZUcDe4nMvrBnA1SuzVFw74vA6u6mHCJ4cVtjT1FQmcAFJoNBrb30Ow_oYifZ53vpkv72aE65IkY6nNmpwxaBCekE4VzPOC5gLGB_2wLs4qbnWh7tSA5U5bAXw5pH_UshW4EMiMnCSmYhD7qJ5TG8Ywsof3SHQdTAfdywlEyQIxS2T7WXRgbT8tRKItOe7G2LQG_2eOcHDc2kca6SZC2f_6vdsH7IXsYng"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none"></div>
+              <div class="absolute bottom-0 inset-x-0 p-space-md flex flex-col sm:flex-row sm:items-center justify-between bg-white/95 backdrop-blur-xl gap-space-xs border-t border-white">
+                <div class="flex items-center gap-3">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#9b111e]"></span>
+                  <span class="font-headline-sm text-headline-sm text-[#131315] italic font-semibold">Sindelfingen Dossier &middot; Ref. 223</span>
+                </div>
+                <span class="font-label-caps text-label-caps text-neutral-700 tracking-widest uppercase font-semibold">High-Speed Aerodynamic Streamlines</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: The 4 Structural Quadrants Narrative -->
+          <div class="lg:col-span-5 space-y-space-md">
+            <div class="p-space-md bg-surface-container-low rounded-xl shadow-md hover:bg-surface-container transition-all duration-300">
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-headline-sm text-headline-sm text-primary italic">01</span>
+                <span class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Iconography</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-white mb-1">The Sculpted Star &amp; Chrome Radiator</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                The sovereign three-pointed star rises proudly from the bonnet, complemented by a radar-translucent glass shield embedded seamlessly within the historic louvers.
+              </p>
+            </div>
+
+            <div class="p-space-md bg-surface-container-low rounded-xl shadow-md hover:bg-surface-container transition-all duration-300">
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-headline-sm text-headline-sm text-primary italic">02</span>
+                <span class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Aeroacoustics</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-white mb-1">Seamless Wind-Tunnel Streamlines</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Continuous shoulder lines and electronically flush door handles guide atmospheric currents over the cabin with virtually zero high-velocity turbulence.
+              </p>
+            </div>
+
+            <div class="p-space-md bg-surface-container-low rounded-xl shadow-md hover:bg-surface-container transition-all duration-300">
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-headline-sm text-headline-sm text-primary italic">03</span>
+                <span class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Coachwork</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-white mb-1">Carmine Red Reflective Contour</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Seven distinct coats of pigmentation, micro-flake metallic lacquers, and hand-polished clear finishes generate deep burgundy chiaroscuro under twilight.
+              </p>
+            </div>
+
+            <div class="p-space-md bg-surface-container-low rounded-xl shadow-md hover:bg-surface-container transition-all duration-300">
+              <div class="flex items-center justify-between mb-space-xs">
+                <span class="font-headline-sm text-headline-sm text-primary italic">04</span>
+                <span class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Optics</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-white mb-1">DIGITAL LIGHT Nocturnal Matrix</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Over 2.6 million micro-mirrors project symbols directly onto the asphalt surface, illuminating up to 650 meters with non-dazzling clarity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         USER'S WEBSITE SECTION 3: The Sovereign Sanctuary
+         ==================================================================== -->
+    <section class="relative w-full bg-surface py-space-xl px-margin overflow-hidden" id="craftsmanship">
+      <div class="absolute right-0 top-1/3 w-[500px] h-[500px] bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="max-w-[1560px] mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-space-xl">
+          <span class="font-label-caps text-label-caps uppercase tracking-[0.3em] text-primary block mb-space-xs">Private Clientele Atelier</span>
+          <h2 class="font-headline-xl text-headline-xl text-white tracking-tight">The Sovereign Sanctuary</h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+            An acoustic oasis enveloped in hand-stitched Exclusive Nappa hides, open-pore walnut marquetry, and multi-sensory rejuvenation suites.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-space-xl">
+          <!-- Craft Tile 1 -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="h-64 w-full relative overflow-hidden bg-[#1a1012]">
+              <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" alt="Mercedes-Benz Nappa leather" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpYWLcimv8UHRgdNonFCBgNYRyvS8AqFStHuMBiWV1XqLOrlHkhrzHKdTes27lyOCBjBUNOSDAnRHbrDZLV97A4emXDojR0ZP1TnNE5rujN-VWmkTxGQy8bIOEC0KXo5ta0meUg9BpZJgB6aMHrSYkNiB-QMbyKRcrIgXCBAbxOALXlSFtS0d3p75MZ4R9OECE2_GzcZXBDRLOmMzebUWkrJsIvvOtRKzgnl417YI596naGdPqecY1"/>
+              <div class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-md text-white font-label-caps text-label-caps uppercase">
+                Handcrafted Hides
+              </div>
+            </div>
+            <div class="p-space-md space-y-space-xs">
+              <h3 class="font-headline-sm text-headline-sm text-white">Manufaktur Exclusive Leather</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Selected exclusively from high-altitude southern German pastures, treated with sustainable vegetable extracts, and finished with double-stitched diamond pleating.
+              </p>
+              <div class="pt-2 flex items-center gap-2 text-primary font-label-data text-label-data">
+                <span>90+ Hours Hand Finishing</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Craft Tile 2 -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="h-64 w-full relative overflow-hidden bg-[#1a1012]">
+              <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" alt="Mercedes-Benz S-Class Dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzzRnrNHjHUnKv0pUycgF_U59i6qtV7YW1uVQgn8W2yS54Ca1ewl_q0plgcba93o5dkupfsuOcy9u-hM8OIMAl1R1Sx-TCjgUvO6slU6-bkfj8esG0oKEhDQlRMc4d7T_x7ITuIxOKGws9JCQ_XkmCiaY3ZHqRtgy2op0M-LSjx_hI4pgNzmiSKdYER4kx7OScnItDJ1IP3ieHyKjqpXfJs6ILhyqUfM55V4N70gGDyWLtOpLN8VDc"/>
+              <div class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-md text-white font-label-caps text-label-caps uppercase">
+                Tactile Precision
+              </div>
+            </div>
+            <div class="p-space-md space-y-space-xs">
+              <h3 class="font-headline-sm text-headline-sm text-white">Pore-Matched Walnut Inlays</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Individual veneers carved from single aged root logs, overlaid with featherweight aluminum pinstripes and preserved with a tactile, matte-silk natural lacquer.
+              </p>
+              <div class="pt-2 flex items-center gap-2 text-primary font-label-data text-label-data">
+                <span>Open-Pore Wood Veneer</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Craft Tile 3 -->
+          <div class="bg-surface-container-low rounded-xl overflow-hidden shadow-xl flex flex-col justify-between">
+            <div class="h-64 w-full relative overflow-hidden bg-[#1a1012]">
+              <img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" alt="Mercedes-Benz Executive Lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjjlWjJU78yU8VnsJxC9fHu8OUMked8pDwNv8XPQh6WPPRBcWJH4oGy07w_iBPUX6JpwiKlNuXUSLcSRperWH5-d5Ceuc-FfncLiqZb69_VayYH54wbW6W9PCI0-0LwpJXUF7yo-wBHklPL0qg_DWJk-wSshsJtknRsnKKJwIjNHcOFpnyEF0Ot1SPpahyWd8IgSwwBm0ervySRMKwi1BPHQdT-rAwYA3hKg4eF7Xzyw8-QHfrdtBz"/>
+              <div class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-md text-white font-label-caps text-label-caps uppercase">
+                First Class Suite
+              </div>
+            </div>
+            <div class="p-space-md space-y-space-xs">
+              <h3 class="font-headline-sm text-headline-sm text-white">Burmester® High-End 4D Sound</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                31 high-performance speakers, 8 electro-acoustic seat exciters producing physical sound vibrations, and 1,750 watts of pure concert hall acoustic fidelity.
+              </p>
+              <div class="pt-2 flex items-center gap-2 text-primary font-label-data text-label-data">
+                <span>Acoustic Waveguide Resonators</span>
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Cabin Atmosphere Selector -->
+        <div class="w-full bg-surface-container-lowest p-space-lg rounded-2xl shadow-2xl transition-all duration-700" id="ambient-console">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="lg:col-span-5 space-y-space-xs">
+              <span class="font-label-caps text-label-caps text-primary uppercase tracking-[0.25em]">Sensory Rejuvenation Console</span>
+              <h3 class="font-headline-lg text-headline-lg text-white">Curate Cabin Illumination</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Toggle 64-color fiber optic active lighting channels coordinated with Burmester soundscapes and interior fragrance atomizers.
+              </p>
+              <div class="flex flex-wrap gap-space-xs pt-space-xs" id="mode-buttons">
+                <button class="px-space-md py-2 rounded-full font-label-caps text-label-caps uppercase tracking-wider transition-all bg-primary-container text-white shadow-lg flex items-center gap-2" id="btn-carmine" onclick="setAtmosphere('carmine')">
+                  <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                  Carmine Dusk
+                </button>
+                <button class="px-space-md py-2 rounded-full font-label-caps text-label-caps uppercase tracking-wider transition-all bg-surface-container-high text-secondary-fixed hover:text-white flex items-center gap-2" id="btn-silver" onclick="setAtmosphere('silver')">
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+                  Starlight Silver
+                </button>
+                <button class="px-space-md py-2 rounded-full font-label-caps text-label-caps uppercase tracking-wider transition-all bg-surface-container-high text-secondary-fixed hover:text-white flex items-center gap-2" id="btn-obsidian" onclick="setAtmosphere('obsidian')">
+                  <span class="w-2.5 h-2.5 rounded-full bg-surface-bright"></span>
+                  Obsidian Glow
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-surface-container rounded-xl p-space-md shadow-inner relative overflow-hidden transition-all duration-500" id="atmosphere-display-card">
+              <div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-white/5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary" id="atmosphere-icon">wb_twilight</span>
+                  <span class="font-headline-sm text-headline-sm text-white" id="atmosphere-name">Carmine Dusk Protocol</span>
+                </div>
+                <span class="font-label-caps text-label-caps text-primary uppercase" id="atmosphere-temp">2700K Warmth &middot; Fragrance #04</span>
+              </div>
+              <div class="grid grid-cols-3 gap-space-sm text-left">
+                <div class="p-3 bg-surface-container-lowest/60 rounded-lg">
+                  <span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">64-Color Tone</span>
+                  <span class="font-body-md text-body-md text-white font-medium" id="atmosphere-color-name">Deep Rubellite &amp; Ruby</span>
+                </div>
+                <div class="p-3 bg-surface-container-lowest/60 rounded-lg">
+                  <span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Acoustic Mode</span>
+                  <span class="font-body-md text-body-md text-white font-medium" id="atmosphere-acoustic">Spatial 4D Orchestral</span>
+                </div>
+                <div class="p-3 bg-surface-container-lowest/60 rounded-lg">
+                  <span class="font-label-caps text-label-caps text-on-surface-variant uppercase block">Ionization Suite</span>
+                  <span class="font-body-md text-body-md text-white font-medium" id="atmosphere-air">Forest Wood &amp; Amber</span>
+                </div>
+              </div>
+              <div class="mt-space-md h-2 w-full rounded-full overflow-hidden bg-surface-container-high relative">
+                <div class="h-full w-full bg-gradient-to-r from-primary-container via-primary to-primary-container animate-pulse duration-1000" id="light-strip"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         USER'S WEBSITE SECTION 4: Curated Specifications (S 500 vs S 580)
+         ==================================================================== -->
+    <section class="relative w-full bg-[#f8f6f5] py-space-xl px-margin overflow-hidden text-[#131315] border-y border-neutral-300" id="specifications">
+      <div class="max-w-[1560px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+          <div class="space-y-space-xs max-w-xl">
+            <span class="font-label-caps text-label-caps uppercase tracking-[0.25em] text-[#9b111e] block font-semibold">Engineered Lineage</span>
+            <h2 class="font-headline-xl text-headline-xl text-[#131315] font-normal">Curated Specifications</h2>
+            <p class="font-body-md text-body-md text-neutral-600">
+              Compare flagship powertrains configured with sovereign poise and 4MATIC permanent all-wheel drive against an architectural gallery standard.
+            </p>
+          </div>
+          <div class="font-label-caps text-label-caps text-neutral-500 uppercase tracking-widest bg-white px-3 py-1.5 rounded border border-neutral-200 shadow-sm">
+            European Specification Standard &middot; MY2025
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-xl">
+          <!-- S 500 4MATIC Card -->
+          <div class="lg:col-span-6 bg-white p-space-lg rounded-2xl shadow-xl flex flex-col justify-between group border border-neutral-200 hover:shadow-2xl transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-space-sm">
+                <span class="font-label-caps text-label-caps uppercase tracking-widest text-[#9b111e] font-semibold">Inline-6 Turbo with EQ Boost</span>
+                <span class="font-label-caps text-label-caps bg-neutral-100 px-2.5 py-1 rounded text-neutral-800 font-semibold border border-neutral-200">M256 ENGINE</span>
+              </div>
+              <h3 class="font-headline-lg text-headline-lg text-[#131315] mb-space-xs">S 500 4MATIC Sedan</h3>
+              <p class="font-body-md text-body-md text-neutral-600 mb-space-md">
+                Effortless, velvet-smooth power delivery supported by an electric auxiliary compressor and 48-volt integrated starter-generator.
+              </p>
+              <div class="grid grid-cols-3 gap-space-sm py-space-md my-space-md border-y border-neutral-200">
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-[#131315] block font-semibold">429 hp</span>
+                  <span class="font-label-caps text-label-caps text-neutral-500 uppercase">Rated Output</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-[#131315] block font-semibold">4.9 s</span>
+                  <span class="font-label-caps text-label-caps text-neutral-500 uppercase">0-60 MPH</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-[#131315] block font-semibold">384 lb-ft</span>
+                  <span class="font-label-caps text-label-caps text-neutral-500 uppercase">Torque @ 1,800 RPM</span>
+                </div>
+              </div>
+              <ul class="space-y-space-xs font-body-sm text-body-sm text-neutral-700">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#9b111e] text-sm">check_circle</span>
+                  AIRMATIC® Air Suspension with Level Control
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#9b111e] text-sm">check_circle</span>
+                  MBUX Navigation with Electric Intelligent Drive
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#9b111e] text-sm">check_circle</span>
+                  Active Ambient Illumination with 250 LED Elements
+                </li>
+              </ul>
+            </div>
+            <div class="mt-space-lg pt-space-md flex items-center justify-between border-t border-neutral-100">
+              <div>
+                <span class="font-label-caps text-label-caps text-neutral-500 uppercase block">Starting MSRP</span>
+                <span class="font-headline-sm text-headline-sm text-[#131315] font-semibold">$117,300*</span>
+              </div>
+              <a href="#consultation" class="px-space-md py-3 bg-[#131315] hover:bg-[#9b111e] text-white font-label-caps text-label-caps uppercase tracking-widest rounded-sm transition-colors shadow-md">
+                Configure Model
+              </a>
+            </div>
+          </div>
+
+          <!-- S 580 4MATIC Card -->
+          <div class="lg:col-span-6 bg-[#180306] p-space-lg rounded-2xl shadow-2xl flex flex-col justify-between relative overflow-hidden group border border-[#800d18]/40 text-white">
+            <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary-container/25 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-space-sm">
+                <span class="font-label-caps text-label-caps uppercase tracking-widest text-[#ffb3af] font-semibold">Biturbo V8 Pinnacle</span>
+                <span class="font-label-caps text-label-caps bg-white text-[#9b111e] font-semibold px-2.5 py-1 rounded shadow-sm">M176 FLAGSHIP</span>
+              </div>
+              <h3 class="font-headline-lg text-headline-lg text-white mb-space-xs">S 580 4MATIC Sedan</h3>
+              <p class="font-body-md text-body-md text-[#e2bebc] mb-space-md">
+                The consummate grand touring powertrain. Twin hot-inside-V turbochargers delivering effortless authoritative surge with acoustic silence.
+              </p>
+              <div class="grid grid-cols-3 gap-space-sm py-space-md my-space-md border-y border-white/10">
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-white block font-medium">496 hp</span>
+                  <span class="font-label-caps text-label-caps text-[#ffb3af] uppercase">+20 hp EQ Boost</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-white block font-medium">4.4 s</span>
+                  <span class="font-label-caps text-label-caps text-[#ffb3af] uppercase">0-60 MPH</span>
+                </div>
+                <div>
+                  <span class="font-headline-sm text-headline-sm text-white block font-medium">516 lb-ft</span>
+                  <span class="font-label-caps text-label-caps text-[#ffb3af] uppercase">Peak Torque</span>
+                </div>
+              </div>
+              <ul class="space-y-space-xs font-body-sm text-body-sm text-neutral-300">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#ffb3af] text-sm">check_circle</span>
+                  Rear-Axle Steering with up to 10-degree Angle
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#ffb3af] text-sm">check_circle</span>
+                  E-ACTIVE BODY CONTROL Hydro-pneumatic Dampers
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#ffb3af] text-sm">check_circle</span>
+                  DIGITAL LIGHT Headlamp Projections &amp; High-Beam Assist
+                </li>
+              </ul>
+            </div>
+            <div class="mt-space-lg pt-space-md flex items-center justify-between relative z-10 border-t border-white/10">
+              <div>
+                <span class="font-label-caps text-label-caps text-neutral-400 uppercase block">Starting MSRP</span>
+                <span class="font-headline-sm text-headline-sm text-white font-semibold">$128,600*</span>
+              </div>
+              <a href="#consultation" class="px-space-md py-3 bg-white text-black hover:bg-[#ffb3af] hover:text-[#68000d] font-label-caps text-label-caps uppercase tracking-widest rounded-sm transition-all shadow-[0_10px_25px_rgba(255,255,255,0.2)] font-semibold">
+                Configure Flagship
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             USER'S WEBSITE SECTION 5: VIP Concierge Atelier Booking Card
+             ==================================================================== -->
+        <div class="w-full bg-white rounded-2xl overflow-hidden shadow-xl border border-neutral-200" id="consultation">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <div class="lg:col-span-7 p-space-lg flex flex-col justify-between">
+              <div class="space-y-space-xs">
+                <div class="inline-flex items-center gap-2 text-[#9b111e] font-label-caps text-label-caps uppercase tracking-widest font-semibold">
+                  <span class="material-symbols-outlined text-sm">stars</span>
+                  <span>Mercedes-Benz Manufaktur Bespoke Division</span>
+                </div>
+                <h3 class="font-headline-lg text-headline-lg text-[#131315]">Reserve a Private Salon Consultation</h3>
+                <p class="font-body-md text-body-md text-neutral-600">
+                  Experience bespoke paintwork samples, unstitched calf hides, and personal curation alongside an accredited Sindelfingen commissioning director.
+                </p>
+              </div>
+
+              <!-- Inquiry Input Form -->
+              <form class="mt-space-lg space-y-space-sm" onsubmit="event.preventDefault(); handleInquirySubmit();">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                  <div>
+                    <label class="font-label-caps text-label-caps uppercase text-neutral-700 block mb-1 font-semibold">Full Title &amp; Name</label>
+                    <input class="w-full bg-[#f8f6f5] px-space-sm py-3 text-[#131315] rounded-none border-b-2 border-neutral-300 focus:border-[#9b111e] focus:outline-none transition-colors font-body-sm text-body-sm" placeholder="Alexander Von Stern" required="" type="text"/>
+                  </div>
+                  <div>
+                    <label class="font-label-caps text-label-caps uppercase text-neutral-700 block mb-1 font-semibold">Direct Telephone / Mobile (+91)</label>
+                    <input class="w-full bg-[#f8f6f5] px-space-sm py-3 text-[#131315] rounded-none border-b-2 border-neutral-300 focus:border-[#9b111e] focus:outline-none transition-colors font-body-sm text-body-sm" placeholder="+91 98200 12345" required="" type="tel"/>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+                  <div>
+                    <label class="font-label-caps text-label-caps uppercase text-neutral-700 block mb-1 font-semibold">Preferred Location (India)</label>
+                    <select class="w-full bg-[#f8f6f5] px-space-sm py-3 text-[#131315] rounded-none border-b-2 border-neutral-300 focus:border-[#9b111e] focus:outline-none transition-colors font-body-sm text-body-sm">
+                      <option>Mumbai Flagship Atelier (Bandra Kurla Complex - BKC)</option>
+                      <option>South Mumbai VIP Salon (Worli / Nariman Point)</option>
+                      <option>Pune Center of Excellence (Chakan / Kalyani Nagar)</option>
+                      <option>New Delhi Diplomatic Salon (Aerocity / Chanakyapuri)</option>
+                      <option>Bengaluru Luxury Showcase (Lavelle Road)</option>
+                      <option>Private Residence Direct Delivery (Mumbai &amp; Pan-India)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="font-label-caps text-label-caps uppercase text-neutral-700 block mb-1 font-semibold">Powertrain Preference</label>
+                    <select class="w-full bg-[#f8f6f5] px-space-sm py-3 text-[#131315] rounded-none border-b-2 border-neutral-300 focus:border-[#9b111e] focus:outline-none transition-colors font-body-sm text-body-sm">
+                      <option>S 580 4MATIC Sedan (V8 Biturbo)</option>
+                      <option>S 500 4MATIC Sedan (I-6 Turbo)</option>
+                      <option>S 580e Plug-in Hybrid (100km EV Range)</option>
+                      <option>Mercedes-Maybach S 680 (V12 Flagship)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="pt-space-xs flex items-center justify-between">
+                  <span class="font-body-sm text-body-sm text-neutral-500 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-[#9b111e]">lock</span>
+                    Confidential Diplomatic Protocol Protected
+                  </span>
+                  <button class="px-space-lg py-3.5 bg-[#131315] text-white hover:bg-[#9b111e] font-label-caps text-label-caps uppercase tracking-widest rounded-sm transition-all shadow-lg font-semibold" id="submit-btn" type="submit">
+                    Submit Invitation Dossier
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right: Indian Map of Mumbai Visual -->
+            <div class="lg:col-span-5 relative min-h-[380px] bg-[#1a0508] flex items-center justify-center p-space-md">
+              <div class="w-full h-full min-h-[340px] bg-cover bg-no-repeat rounded-xl overflow-hidden shadow-2xl relative border border-white/10" style="background-image: url('indian_map.jpg'); background-position: 20% 54%;">
+                <!-- Mumbai Active Radar Pinpoint -->
+                <div class="absolute top-[54%] left-[20%] -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 z-10 bg-[#131315]/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-primary shadow-[0_0_20px_rgba(155,17,30,0.85)]">
+                  <span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+                  <span class="font-label-caps text-label-caps uppercase text-white font-bold tracking-widest text-[11px]">MUMBAI ATELIER</span>
+                </div>
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-black/20 p-space-md flex flex-col justify-end pointer-events-none">
+                  <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest font-semibold">Mercedes-Benz India &middot; Flagship Headquarters</span>
+                  <span class="font-headline-sm text-headline-sm text-white font-medium">Center of Excellence &middot; BKC, Mumbai</span>
+                  <span class="font-body-sm text-body-sm text-neutral-300 mt-1">G-Block, Bandra Kurla Complex (BKC), Mumbai, Maharashtra 400051, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       USER'S WEBSITE FOOTER
+       ==================================================================== -->
+  <footer class="w-full bg-surface-container-lowest border-t border-white/[0.08] pt-space-xl pb-space-lg">
+    <div class="w-full px-margin grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-xl">
+      <div class="md:col-span-5 flex flex-col justify-between pr-gutter">
+        <div class="space-y-space-sm">
+          <div class="flex items-center gap-space-xs text-secondary-fixed">
+            <span class="font-headline-sm text-headline-sm uppercase tracking-widest">Mercedes-Benz India</span>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">The pinnacle of automotive refinement, autonomous intellect, and sovereign poise. S-Class represents the enduring zenith of bespoke mobility.</p>
+        </div>
+        <div class="pt-space-md">
+          <span class="font-label-caps text-label-caps text-primary tracking-[0.2em] uppercase block">Private Client Services (India)</span>
+          <span class="font-headline-sm text-headline-sm text-secondary-fixed">+91 (022) 6789 5000 &middot; 1800 102 9222</span>
+          <span class="font-body-sm text-body-sm text-neutral-400 block mt-1">Toll-Free 24/7 VIP Concierge &middot; Mumbai Headquarters</span>
+        </div>
+      </div>
+      <div class="md:col-span-2 space-y-space-sm">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block">Fleet Portfolio</span>
+        <ul class="space-y-space-xs">
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">S 500 4MATIC Sedan</li>
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">S 580e Plug-in Hybrid</li>
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Mercedes-Maybach S 680</li>
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">AMG S 63 E PERFORMANCE</li>
+        </ul>
+      </div>
+      <div class="md:col-span-2 space-y-space-sm">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block">Clientele Atelier</span>
+        <ul class="space-y-space-xs">
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Bespoke Manufaktur</li>
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Diplomatic &amp; Armored</li>
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Mumbai VIP Salon</li>
+          <li class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer">Pan-India Delivery Protocol</li>
+        </ul>
+      </div>
+      <div class="md:col-span-3 space-y-space-sm">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block">The Heritage Dossier</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Engineered without compromise since 1951. Each S-Class vehicle is an irrevocable commitment to sensory serenity, vanguard aerodynamics, and handcrafted sovereignty.</p>
+      </div>
+    </div>
+    
+    <div class="w-full px-margin pt-space-md border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+      <span class="font-label-caps text-label-caps text-on-surface-variant">&copy; 2026 Mercedes-Benz India Pvt. Ltd. All rights reserved.</span>
+      <div class="flex items-center gap-space-md font-label-caps text-label-caps text-on-surface-variant">
+        <span class="hover:text-on-surface transition-colors cursor-pointer">Legal Notices</span>
+        <span class="hover:text-on-surface transition-colors cursor-pointer">Privacy Statement</span>
+        <span class="hover:text-on-surface transition-colors cursor-pointer">Emission Standards</span>
+        <span class="hover:text-on-surface transition-colors cursor-pointer">Mumbai Flagship</span>
+      </div>
+    </div>
+
+    <!-- Made by Shahid Mulani Signature -->
+    <div class="w-full px-margin pt-6 mt-4 border-t border-white/[0.08] flex items-center justify-center text-center">
+      <span class="font-label-caps text-label-caps tracking-[0.32em] uppercase text-neutral-400 text-xs">
+        Crafted with Precision &middot; Made by <span class="text-white font-semibold tracking-[0.38em] border-b border-[#ffb3af]/60 pb-0.5">Shahid Mulani</span>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript Engines -->
+  <script src="script.js"></script>
+</body>
+</html>
