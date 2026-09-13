@@ -18,6 +18,7 @@
   "author": "Shahid Mulani",
   "license": "MIT",
   "dependencies": {
-    "isomorphic-git": "^1.42.2"
+    "isomorphic-git": "^1.42.2",
+    "puppeteer-core": "^25.10.0"
   }
 }
