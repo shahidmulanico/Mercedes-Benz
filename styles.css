@@ -523,6 +523,21 @@ html.lenis, html.lenis body {
 }
 
 /* --------------------------------------------------------------------------
+   Ultra-Smooth Reveal On Scroll
+   -------------------------------------------------------------------------- */
+.smooth-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.smooth-reveal.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* --------------------------------------------------------------------------
    Mercedes Sound Experience & Equalizer Wave Animations
    -------------------------------------------------------------------------- */
 .preloader-entry-action.ready {

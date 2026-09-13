@@ -543,7 +543,43 @@
   };
 
   /* --------------------------------------------------------------------------
-     5. Event Listeners & Boot
+     8. Ultra-Smooth Luxury Navigation & Reveal On Scroll
+     -------------------------------------------------------------------------- */
+  // Smooth Anchor Navigation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || !href) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -70, duration: 1.4 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Smooth Reveal on Scroll
+  if ('IntersectionObserver' in window) {
+    const revealTargets = document.querySelectorAll('#innovation, #craftsmanship, #specifications, #consultation, footer');
+    revealTargets.forEach(el => el.classList.add('smooth-reveal'));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
+
+  /* --------------------------------------------------------------------------
+     9. Event Listeners & Boot
      -------------------------------------------------------------------------- */
   window.addEventListener('resize', resizeCanvas);
   preloadImages();
